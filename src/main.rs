@@ -1,30 +1,23 @@
-use ferris_says::say;
-use std::io::{stdout, BufWriter};
-
 fn main() {
-    let x = 6;
-    println!("{x}");
-    let x = 5;
-    println!("{}", x)
+    // addition
+    let sum = 5 + 10;
+    println!("{}", sum);
+
+    // subtraction
+    let difference = 95.5 - 4.3;
+    println!("{}", difference);
+
+    // multiplication
+    let product = 4 * 30;
+    println!("{}", product);
+
+    // division
+    let quotient = 56.7 / 32.2;
+    println!("{}", quotient);
+    let truncated = -5 / 3; // 结果为 -1
+    println!("{}", truncated);
+
+    // remainder
+    let remainder = 43 % 5;
+    println!("{}", remainder);
 }
-
-// fn main() {
-//     let stdout = stdout();
-//     let message = String::from("Hello fellow Rustaceans!");
-//     let width = message.chars().count();
-
-//     let mut writer = BufWriter::new(stdout.lock());
-//     say(message.as_bytes(), width, &mut writer).unwrap();
-// }
-
-// // use ferris_says::say; // from the previous step
-// // use std::io::{stdout, BufWriter};
-
-// // fn main() {
-// //     let stdout = stdout();
-// //     let message = String::from("Hello fellow Rustaceans!");
-// //     let width = message.chars().count();
-
-// //     let mut writer = BufWriter::new(stdout.lock());
-// //     say(message.as_bytes(), width, &mut writer).unwrap();
-// // }
