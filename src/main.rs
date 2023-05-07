@@ -1,23 +1,17 @@
 fn main() {
     // addition
-    let sum = 5 + 10;
+    let mut sum = 5 + 10;
+
+    {
+        sum = sum + 1
+    }
+
     println!("{}", sum);
 
-    // subtraction
-    let difference = 95.5 - 4.3;
-    println!("{}", difference);
+    let y = {
+        let x = 3;
+        x + 1; // 需要去掉分号, 才符合预期. 语法确实有点奇怪起来了...
+    };
 
-    // multiplication
-    let product = 4 * 30;
-    println!("{}", product);
-
-    // division
-    let quotient = 56.7 / 32.2;
-    println!("{}", quotient);
-    let truncated = -5 / 3; // 结果为 -1
-    println!("{}", truncated);
-
-    // remainder
-    let remainder = 43 % 5;
-    println!("{}", remainder);
+    println!("The value of y is: {y}");
 }
