@@ -1,17 +1,7 @@
 fn main() {
-    // addition
-    let mut sum = 5 + 10;
+    let condition = true;
 
-    {
-        sum = sum + 1
-    }
+    let number = if condition { 5 } else { 6 };
 
-    println!("{}", sum);
-
-    let y = {
-        let x = 3;
-        x + 1; // 需要去掉分号, 才符合预期. 语法确实有点奇怪起来了...
-    };
-
-    println!("The value of y is: {y}");
+    println!("The value of number is: {number}");
 }
