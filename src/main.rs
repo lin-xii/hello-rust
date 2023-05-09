@@ -12,12 +12,14 @@ fn main() {
     let c = 5;
     println!("c's addr is {:p}", &c);
     let d = c;
-    println!("d's addr is {:p} and c is live {:p}", &d, &c); // 所有权move. 但这块属于copy了
+    println!("d's addr is {:p} and c is live {:p}", &d, &c); // re assgin. 所有权move. 但这块属于copy了
 
     let e = 6;
     println!("e's addr is {:p}", &e);
     do_something(e);
-    println!("after fn. e's addr is {:p}", &e); // scalars传參, 所有权会变动, 但属于copy. 原scope的值, 可以继续使用
+    println!("after fn. e's addr is {:p}", &e); // scalar fn 传參, 所有权会变动, 但属于copy. 原scope的值, 可以继续使用
+
+    // TODO: compound的所有权, 是个什么样子. 目测和scalar会有区别. 因为compound涉及heap数据了
 }
 
 fn do_something(n: i32) {
