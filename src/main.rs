@@ -36,21 +36,21 @@ fn main() {
      */
 
     /* unsure: char &str String difference? */
-    let type_str = "slice"; // 切片类型 slice. 数据也是在stack的
-                            // slice 指向的指针, 在stack. 但实际的值, 在全局静态内存
-                            // TODO: 相当于段内存吧?
-    let mut hello: &str = "h"; // 也就是说, slice相当于不可变字符串
-    println!("addr: {:p}", hello);
-    hello = "he";
-    println!("changed addr: {:p}", hello);
-    let hello = "hel";
-    println!("shadow hello's addr is: {:p}", hello);
-    console_debug(type_str);
+    // let type_str = "slice"; // 切片类型 slice. 数据也是在stack的
+    //                         // slice 指向的指针, 在stack. 但实际的值, 在全局静态内存
+    //                         // TODO: 相当于段内存吧?
+    // let mut hello: &str = "h"; // 也就是说, slice相当于不可变字符串
+    // println!("addr: {:p}", hello);
+    // hello = "he";
+    // println!("changed addr: {:p}", hello);
+    // let hello = "hel";
+    // println!("shadow hello's addr is: {:p}", hello);
+    // console_debug(type_str);
 
-    let mut type_string = String::from("hello rust");
-    type_string.push_str("hello");
-    println!("this variable's type is what?: {}", type_str);
-    println!("this variable's type is what?: {}", type_string);
+    // let mut type_string = String::from("hello rust");
+    // type_string.push_str("hello");
+    // println!("this variable's type is what?: {}", type_str);
+    // println!("this variable's type is what?: {}", type_string);
 }
 
 fn console_debug(text: &str) {
