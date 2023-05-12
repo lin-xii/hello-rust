@@ -14,6 +14,12 @@ fn main() {
     // mut_num = 5;
     // println!("i32 changed. Had addr changed?: {:p}", &mut_num); // i32 changed. Had addr changed?: 0x16f35ea24
 
+    /* memory addr allocate rule */
+    let num1: u8 = 1; // i32, 4byte
+    let num2: u8 = 2; // u8 1byte
+    println!("num1 & num2's addr: {:p} {:p}", &num1, &num2);
+    /* conclusion: 从指针地址看, 0x16b326a06->0x16b326a07, 只增加了1. 看起来, 指针地址是以byte为最小增长单位的  */
+
     /* unsure: char &str String difference? */
     let type_str = "slice"; // 切片类型 slice. 数据也是在stack的
     let mut hello = "hello rust!"; // 也就是说, slice相当于不可变字符串
