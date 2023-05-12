@@ -15,17 +15,34 @@ fn main() {
     // println!("i32 changed. Had addr changed?: {:p}", &mut_num); // i32 changed. Had addr changed?: 0x16f35ea24
 
     /* memory addr allocate rule */
-    let num1: u8 = 1; // i32, 4byte
-    let num2: u8 = 2; // u8 1byte
-    println!("num1 & num2's addr: {:p} {:p}", &num1, &num2);
+    // let num1: u8 = 1; // i32, 4byte
+    // let num2: u8 = 2; // u8 1byte
+    // println!("num1 & num2's addr: {:p} {:p}", &num1, &num2);
     /* conclusion: 从指针地址看, 0x16b326a06->0x16b326a07, 只增加了1. 看起来, 指针地址是以byte为最小增长单位的  */
+
+    /* pointer地址, 是什么进制的? 16进制 */
+    // TODO: 指针地址、内存16进制计算
+    // let num_1: u8 = 2;
+    // println!("num_1's addr: {:p}", &num_1);
+    // let num_2: u8 = 3;
+    // println!("num_2's addr: {:p}", &num_2);
+    // let num_3: u8 = 4;
+    // println!("num_3's addr: {:p}", &num_3);
+    /*
+    num_1's addr: 0x16d97297f
+    num_2's addr: 0x16d9729cf
+    num_3's addr: 0x16d972a1f
+    看起来, 是4byte, 但16进制, 怎么计算来着???
+     */
 
     /* unsure: char &str String difference? */
     let type_str = "slice"; // 切片类型 slice. 数据也是在stack的
-    let mut hello = "hello rust!"; // 也就是说, slice相当于不可变字符串
+    let mut hello: &str = "h"; // 也就是说, slice相当于不可变字符串
     println!("addr: {:p}", hello);
-    hello = "hello rust cc";
+    hello = "he";
     println!("changed addr: {:p}", hello);
+    let hello = "hel";
+    println!("shadow hello's addr is: {:p}", hello);
     console_debug(type_str);
 
     let mut type_string = String::from("hello rust");
