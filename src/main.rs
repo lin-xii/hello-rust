@@ -51,6 +51,11 @@ fn main() {
     // type_string.push_str("hello");
     // println!("this variable's type is what?: {}", type_str);
     // println!("this variable's type is what?: {}", type_string);
+
+    /* &str, 因为都是immutable ref, 自身就不是值. 没有所有权, 所以, 不会报错 */
+    // let a = "hello rust";
+    // let b = a;
+    // println!("a and b is available: {},{}", a, b); //ref没有ownership, 所以, 不会报错
 }
 
 fn console_debug(text: &str) {
