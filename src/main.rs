@@ -1,5 +1,5 @@
 use std::println;
 
 fn main() {
-    println!("Git branch: feature")
+    println!("Git branch: feature");
 }
