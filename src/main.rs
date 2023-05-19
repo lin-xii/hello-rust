@@ -1,5 +1,9 @@
 use std::println;
 
 fn main() {
-    println!("re")
+    anthoer_fn(5)
+}
+
+fn anthoer_fn(x: i32) {
+    println!("{:p}", &x)
 }
