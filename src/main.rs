@@ -32,4 +32,12 @@ fn main() {
     data、new_data地址一致. 复合预期
     因为顺序allocate内存, 所以直接move ownership时, memory address不变化
      */
+
+    /*
+    char 4byte
+    bool 1byte
+    float 8byte
+    integer 根据长度变化
+     */
+    let pointer_size = true;
 }
