@@ -11,13 +11,12 @@ fn main() {
         width: 20,
         height: 40,
     };
-
-    let area_rectangle = area(rect1);
+    let area_rectangle = area(&rect1);
 
     // Output
     dbg!(area_rectangle);
 }
 
-fn area(rectangle: Rectangle) -> u32 {
+fn area(rectangle: &Rectangle) -> u32 {
     rectangle.width * rectangle.height
 }
