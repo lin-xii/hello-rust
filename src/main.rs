@@ -7,21 +7,24 @@ struct Rectangle {
     height: u32,
 }
 
+impl Rectangle {
+    /// 计算面积
+    fn area(&self) -> u32 {
+        self.width * self.height
+    }
+}
+
 fn main() {
     let rect1 = Rectangle {
         width: 20,
         height: 40,
     };
-    let area_rectangle = area(&rect1);
 
     // Output
     println!("rectangle is:{:#?}", rect1);
-    dbg!(area_rectangle);
-    // dbg! 会拿走ownership, 打印的时候, 需要考虑这个问题
-    let rect1 = dbg!(rect1);
-    println!("{:#?}", rect1);
+    dbg!(rect1.area());
 }
 
-fn area(rectangle: &Rectangle) -> u32 {
-    rectangle.width * rectangle.height
-}
+// fn area(rectangle: &Rectangle) -> u32 {
+//     rectangle.width * rectangle.height
+// }
