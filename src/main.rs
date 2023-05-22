@@ -9,6 +9,7 @@ struct Rectangle {
 
 impl Rectangle {
     /// 计算面积
+    // self可以是ref, 也可以是variable, move ownership
     fn area(&self) -> u32 {
         self.width * self.height
     }
@@ -21,10 +22,6 @@ fn main() {
     };
 
     // Output
-    println!("rectangle is:{:#?}", rect1);
-    dbg!(rect1.area());
+    println!("rectangle's area is:{:#?}", rect1.area());
+    dbg!(rect1);
 }
-
-// fn area(rectangle: &Rectangle) -> u32 {
-//     rectangle.width * rectangle.height
-// }
