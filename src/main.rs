@@ -14,8 +14,8 @@ impl Rectangle {
         self.width * self.height
     }
 
-    fn width(&self) -> bool {
-        self.width > 0
+    fn can_hold(&self, another: &Rectangle) -> bool {
+        self.width > another.width && self.height > another.height
     }
 }
 
@@ -24,12 +24,13 @@ fn main() {
         width: 20,
         height: 40,
     };
-
-    if rect1.width() {
-        println!("方法:method、字段:field可以同名");
-    }
+    let rect2 = Rectangle {
+        width: 100,
+        height: 5,
+    };
 
     // Output
     println!("rectangle's area is:{:#?}", rect1.area());
-    dbg!(rect1);
+    // dbg!(rect1);
+    dbg!(rect1.can_hold(&rect2));
 }
