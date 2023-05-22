@@ -1,17 +1,19 @@
 use std::println;
 
-fn main() {
-    let mut a = 1;
-    println!("before: {:p}", &a);
-    plus_one(&mut a);
-    println!("after: {}", a)
+#[derive(Debug)]
+struct User {
+    // 用不了&str, 需要配合生命周期
+    // 需要看的还很多
+    name: String,
+    age: i32,
 }
 
-// &mut ref能修改值么?
-// stack的不行? heap的可以?
-// 光知道String是可以的
-// scalar需要配合deref * 才能修改值
-fn plus_one(num: &mut i32) {
-    *num = *num + 1;
-    println!("plus_one: {:p}", num);
+fn main() {
+    let user1 = User {
+        name: String::from("user_one"),
+        age: 1,
+    };
+    println!("{:?}", user1);
+    // 相比println, dbg才是真正调试信息的工具!!!
+    dbg!(user1);
 }
