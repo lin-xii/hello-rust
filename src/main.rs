@@ -18,7 +18,7 @@ fn main() {
     println!("rectangle is:{:#?}", rect1);
     dbg!(area_rectangle);
     // dbg! 会拿走ownership, 打印的时候, 需要考虑这个问题
-    dbg!(rect1);
+    let rect1 = dbg!(rect1);
     println!("{:#?}", rect1);
 }
 
