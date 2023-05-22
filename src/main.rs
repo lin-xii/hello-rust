@@ -1,11 +1,23 @@
-fn main() {
-    let width = 30;
-    let height = 50;
+/// 长方形
+struct Rectangle {
+    /// 宽度
+    width: u32,
+    /// 高度
+    height: u32,
+}
 
-    let area_rectangle = area(width, height);
+fn main() {
+    let rect1 = Rectangle {
+        width: 20,
+        height: 40,
+    };
+
+    let area_rectangle = area(rect1);
+
+    // Output
     dbg!(area_rectangle);
 }
 
-fn area(witdh: u32, height: u32) -> u32 {
-    witdh * height
+fn area(rectangle: Rectangle) -> u32 {
+    rectangle.width * rectangle.height
 }
