@@ -1,3 +1,4 @@
+// : std::cmp::PartialOrd 是一个trait
 fn largest<T: std::cmp::PartialOrd>(list: &[T]) -> &T {
     let mut largest = &list[0];
 
