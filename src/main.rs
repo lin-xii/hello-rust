@@ -1,19 +1,11 @@
-#[derive(Debug)]
-
-enum Message {
-    Quit,
-    Move { x: i32, y: i32 },
-    Write(String),
-    ChangeColor(i32, i32, i32),
-}
-
-impl Message {
-    fn call(&self) {
-        println!("{:#?}", self);
-    }
-}
-
 fn main() {
-    let mes = Message::Write(String::from("this is Message"));
-    mes.call();
+    let config_max = Some(3);
+    match config_max {
+        Some(max) => println!("some:{}", max),
+        _ => (),
+    }
+    // if let Some(max) = config_max {
+    //     println!("The maximum is configured to be {}", max);
+    // }
+    dbg!(config_max);
 }
