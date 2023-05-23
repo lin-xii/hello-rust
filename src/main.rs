@@ -1,1 +1,3 @@
-fn main() {}
+fn main() {
+    panic!("crash and burn");
+}
