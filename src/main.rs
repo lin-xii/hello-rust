@@ -1,3 +1,8 @@
+use crate::garden::vegetables::Asparagus;
+
+pub mod garden;
+
 fn main() {
-    dbg!("init crate");
+    let plant = Asparagus {};
+    println!("I'm growing {:?}", plant);
 }
