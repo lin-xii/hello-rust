@@ -1,6 +1,12 @@
-fn main() {
-    let num_a = 5;
-    let num_b = Some(10);
+#[derive(Debug)]
 
-    dbg!(num_a + num_b);
+enum IpAddr {
+    V4(u8, u8, u8, u8),
+    V6(String),
+}
+
+fn main() {
+    let home = IpAddr::V4(127, 0, 0, 1);
+    let loopback = IpAddr::V6(String::from("::1"));
+    dbg!(home);
 }
