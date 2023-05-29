@@ -1,5 +1,11 @@
 pub trait Summary {
-    fn summarize(&self) -> String;
+    // 可以定义abstract method. 类似interface
+    // fn summarize(&self) -> String;
+
+    // 也能定义父method, 然后子类自己去重载
+    fn summarize(&self) -> String {
+        String::from("(Read more...)")
+    }
 }
 
 pub struct NewsArticle {
@@ -10,9 +16,10 @@ pub struct NewsArticle {
 }
 
 impl Summary for NewsArticle {
-    fn summarize(&self) -> String {
-        format!("{}, by {} ({})", self.headline, self.author, self.location)
-    }
+    // 虽然不用实现trait方法, 但是得声明继承..
+    // fn summarize(&self) -> String {
+    //     format!("{}, by {} ({})", self.headline, self.author, self.location)
+    // }
 }
 
 pub struct Tweet {
