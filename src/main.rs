@@ -6,7 +6,7 @@ fn main() {
     println!("The longest string is {}", result);
 }
 
-fn longest<'a>(x: &str, y: &str) -> &'a str {
+fn longest(x: &str, y: &str) -> &'static str {
     let result = String::from("really long string");
     result.as_str()
 }
