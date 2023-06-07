@@ -1,5 +1,3 @@
-use std::println;
-
 #[derive(Debug)]
 struct User {
     // 用不了&str, 需要配合生命周期
