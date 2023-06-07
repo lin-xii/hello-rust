@@ -1,5 +1,3 @@
-use std::println;
-
 #[derive(Debug)]
 struct User {
     // 用不了&str, 需要配合生命周期
@@ -18,3 +16,5 @@ fn main() {
     // 相比println, dbg才是真正调试信息的工具!!!
     dbg!(user1.name);
 }
+
+// 改点代码, 试试rebase
