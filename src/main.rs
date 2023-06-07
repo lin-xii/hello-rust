@@ -18,3 +18,5 @@ fn main() {
     // 相比println, dbg才是真正调试信息的工具!!!
     dbg!(user1.name);
 }
+
+// rebase 1
