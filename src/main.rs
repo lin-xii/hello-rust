@@ -1,10 +1,7 @@
 fn main() {
-    let list = vec![1, 2, 3];
-    println!("Before defining closure: {:?}", list);
+    // doc: 验证patch
+    let example_closure = |x| x;
 
-    let only_borrows = || println!("From closure: {:?}", list);
-
-    println!("Before calling closure: {:?}", list);
-    only_borrows();
-    println!("After calling closure: {:?}", list);
+    let s = example_closure(String::from("hello"));
+    let n = example_closure(5);
 }
